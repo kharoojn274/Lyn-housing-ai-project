@@ -74,17 +74,20 @@ Data Layer & External Services
 Our frontend is built with a modular, component-based architecture to promote reusability and maintainability.
 
 #### Core Components
+
 - **ListingCard**: A summary card for a single property, used on the `PropertiesPage`.
 - **PropertySearchBox**: A form for searching properties by city with autocomplete functionality.
 - **PropertyMap**: An interactive Leaflet map that displays a property's location using geocoding.
 - **PriceHistoryChart**: A Chart.js graph visualizing the price history trends of a property.
 
 #### AI & Analysis Components
+
 - **AiAnalysisButton**: Triggers AI-powered property analysis using OpenAI integration.
 - **Analysis Results Display**: Renders formatted AI analysis with market insights and price predictions.
 - **AnalysisCache**: Backend caching system for optimizing AI API calls and improving performance.
 
 #### UI & Utility Components
+
 - **ScoreBadge**: Displays Walk Score, Transit Score, and Bike Score for property locations.
 - **ImageGallery**: A responsive carousel for viewing property images.
 - **RealtorInfo**: Shows contact information for the listing agent with social links.
@@ -96,6 +99,7 @@ Our frontend is built with a modular, component-based architecture to promote re
 The backend is a Django REST API application with integrated AI capabilities that provides comprehensive property management and intelligent analysis services.
 
 #### Django Apps Structure
+
 - **listings**: The core application managing all property-related data and AI analysis.
   - **Models**: `Listing`, `PriceHistory`, and `AnalysisCache` define the database schema.
   - **Views**: RESTful API endpoints for CRUD operations, search functionality, and AI analysis proxy.
@@ -103,6 +107,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
   - **URLs**: Defines comprehensive API endpoint routes including AI analysis endpoints.
 
 #### AI Integration Layer
+
 - **OpenAI Integration**: Direct integration with OpenAI GPT-3.5-turbo for property market analysis.
 - **Analysis Caching**: Intelligent caching system using `AnalysisCache` model to optimize API costs and response times.
 - **Prompt Engineering**: Structured prompt templates for consistent and professional real estate analysis reports.
@@ -110,6 +115,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 ## Data Flow
 
 ### Property Search & View Flow
+
 1.  A user on the `PropertiesPage` uses the `PropertySearchBox`.
 2.  The frontend makes a GET request to the `/api/listings/search/?city={city}` endpoint.
 3.  The Django backend filters listings by city and returns the data.
@@ -118,6 +124,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 6.  The `PropertyDetailPage` fetches detailed data for that property and renders components like `ImageGallery`, `PropertyMap`, and `PriceHistoryChart`.
 
 ### User Authentication Flow
+
 1.  A new user navigates to the `RegisterPage` and fills out the registration form.
 2.  Client-side validation is performed instantly using the `InputValidation` tool.
 3.  Upon submission, a request is sent to Firebase Authentication to create a new user.
@@ -127,21 +134,25 @@ The backend is a Django REST API application with integrated AI capabilities tha
 7.  Protected actions, like AI analysis and favoriting properties, check the `AuthContext` and prompt unauthenticated users to log in.
 
 ### AI-Powered Property Analysis Flow
+
 1.  An authenticated user clicks the "Magic LynAI" button on a `PropertyDetailPage`.
 2.  The frontend sends a POST request to `/api/listings/analyze-housing/` with the property listing ID.
 3.  The Django backend checks the `AnalysisCache` for existing analysis to avoid duplicate OpenAI API calls.
 4.  If no cache exists, the system generates a structured prompt including property details and price history.
 5.  The backend calls OpenAI GPT-3.5-turbo API with the engineered prompt for market analysis.
 6.  The AI response is cached in `AnalysisCache` and returned to the frontend with structured analysis including:
-   - Market Analysis Summary
-   - Price Trend Analysis  
-   - Future Price Predictions
-   - Key Factors & Recommendations
+
+- Market Analysis Summary
+- Price Trend Analysis
+- Future Price Predictions
+- Key Factors & Recommendations
+
 7.  The frontend renders the formatted analysis with proper styling and user-friendly presentation.
 
 ## Technology Decisions
 
 ### Frontend Stack
+
 - **React**: Modern JavaScript library for building component-based user interfaces.
 - **Vite**: Next-generation frontend build tool for fast development and optimized production builds.
 - **React Router**: Declarative routing for single-page application navigation.
@@ -151,6 +162,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 - **Chart.js**: Flexible charting library for data visualization and price history graphs.
 
 ### Backend Stack
+
 - **Django**: High-level Python web framework following the "batteries-included" philosophy.
 - **Django REST Framework**: Powerful toolkit for building Web APIs with serialization, authentication, and permissions.
 - **OpenAI API**: Integration with GPT-3.5-turbo for AI-powered property analysis and market insights.
@@ -159,6 +171,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 - **python-dotenv**: Environment variable management for secure configuration.
 
 ### External Libraries & Services
+
 - **OpenAI GPT-3.5-turbo**: Advanced language model for generating property market analysis and investment insights.
 - **Firebase Authentication**: Secure user authentication with email/password and social login capabilities.
 - **Leaflet + OpenStreetMap**: Interactive mapping solution with geocoding and location services.
@@ -169,6 +182,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 ## Scalability and Future Enhancements
 
 ### Implemented Features
+
 - **AI-Powered Analysis**: OpenAI integration with intelligent caching for property market insights.
 - **Component-based Architecture**: High reusability and maintainability with modular React components.
 - **Global State Management**: React Context for authentication state and user session management.
@@ -181,6 +195,7 @@ The backend is a Django REST API application with integrated AI capabilities tha
 - **Containerization**: Docker and Docker Compose for consistent development and deployment environments.
 
 ### Future Roadmap
+
 - **Advanced AI Features**: Integration of computer vision for property image analysis and automated condition assessment.
 - **Real-time Notifications**: WebSocket implementation for live property updates and price alerts.
 - **Enhanced Search & Filtering**: Machine learning-powered recommendation engine and advanced search criteria.

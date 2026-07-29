@@ -1,13 +1,15 @@
 # Project Structure Documentation
 
 ## Overview
+
 This document provides a detailed breakdown of the Lyn Housing AI App project structure, explaining the purpose and contents of each directory and major file.
 
 ## Root Directory Structure
+
 ```
 lyn-housing-ai-app/
 ├── backend/                    # Django REST API backend with AI integration
-├── frontend/                   # React frontend application  
+├── frontend/                   # React frontend application
 ├── docs/                      # Project documentation
 ├── docker-compose.yml         # Multi-service Docker orchestration
 ├── start-lynapp-win.bat      # Windows startup script
@@ -19,6 +21,7 @@ lyn-housing-ai-app/
 ## Backend Structure (`backend/`)
 
 ### Django Project Layout
+
 ```
 backend/
 ├── lynapp-django/            # Main Django project configuration
@@ -54,11 +57,13 @@ backend/
 ### Key Backend Files
 
 #### `models.py`
+
 - **Listing Model**: Core property information (title, address, price, features)
 - **PriceHistory Model**: Historical price data with JSON field for price progression
 - **AnalysisCache Model**: Caches OpenAI analysis results for performance optimization
 
 #### `views.py`
+
 - RESTful API views using Django REST Framework
 - CRUD operations for listings
 - Search functionality with city filtering
@@ -66,6 +71,7 @@ backend/
 - Analysis caching system to reduce API costs and improve response times
 
 #### `serializer.py`
+
 - JSON serialization for API responses
 - Data validation and formatting
 - Nested serialization for related models (Listing with PriceHistory)
@@ -73,6 +79,7 @@ backend/
 ## Frontend Structure (`frontend/lynapp-react/`)
 
 ### React Application Layout
+
 ```
 frontend/lynapp-react/
 ├── src/                     # Source code
@@ -106,7 +113,9 @@ frontend/lynapp-react/
 ```
 
 ### Components Directory (`src/components/`)
+
 This directory contains all reusable React components, organized by functionality.
+
 ```
 components/
 ├── buttons/                      # Action buttons for user interaction
@@ -141,7 +150,9 @@ components/
 ```
 
 ### Pages Directory (`src/pages/`)
+
 Contains top-level components that correspond to application routes, organized by user access level.
+
 ```
 pages/
 ├── guest/                    # Pages accessible to all users
@@ -167,14 +178,18 @@ pages/
 ```
 
 ### Contexts Directory (`src/contexts/`)
+
 Manages global state using React's Context API.
+
 ```
 contexts/
 └── AuthContext.jsx           # Manages Firebase user authentication state globally
 ```
 
 ### Services Directory (`src/services/`)
+
 Handles all external API communication.
+
 ```
 services/
 ├── api.js                    # Axios client for Django backend API communication
@@ -182,7 +197,9 @@ services/
 ```
 
 ### Tools Directory (`src/tools/`)
+
 Contains helper functions and utilities that are not React components.
+
 ```
 tools/
 ├── InputValidation.js        # Client-side form validation logic and rules
@@ -190,14 +207,18 @@ tools/
 ```
 
 ### Styles Directory (`src/styles/`)
+
 Global styling and design system.
+
 ```
 styles/
 └── colors.css               # Design system color variables and theme
 ```
 
 ### Assets Directory (`src/assets/`)
+
 Static assets for the application.
+
 ```
 assets/
 ├── images/                  # Property images and UI graphics
@@ -206,12 +227,14 @@ assets/
 ```
 
 ### Hooks Directory (`src/hooks/`)
+
 ```
 hooks/
 └── useListings.js           # Custom hook for property data management
 ```
 
 #### useListings Hook
+
 - Manages fetching and state for property data from Django API
 - Handles both city search and individual property retrieval
 - Provides loading states and error handling for better UX
@@ -219,6 +242,7 @@ hooks/
 - Supports both localhost (development) and production API endpoints
 
 ## Documentation Structure (`docs/`)
+
 ```
 docs/
 ├── API.md                   # API endpoint documentation
@@ -232,6 +256,7 @@ docs/
 ## Configuration Files
 
 ### Frontend Configuration
+
 - **package.json**: Dependencies, scripts, and project metadata
 - **vite.config.js**: Build tool configuration and development server settings
 - **eslint.config.js**: Code quality and linting rules for React
@@ -239,12 +264,14 @@ docs/
 - **.env**: Environment variables for Firebase and API configuration
 
 ### Backend Configuration
+
 - **requirements.txt**: Python package dependencies (Django, OpenAI, CORS, etc.)
 - **settings.py**: Django configuration (database, CORS, OpenAI API, environment variables)
 - **manage.py**: Django command-line utility for migrations and server management
 - **.env**: Environment variables for OpenAI API key and Django settings
 
 ### Docker Configuration
+
 - **docker-compose.yml**: Multi-service orchestration for development
 - **backend/Dockerfile**: Backend container configuration
 - **frontend/lynapp-react/Dockerfile**: Frontend container configuration
@@ -254,16 +281,19 @@ docs/
 ## Static Assets
 
 ### Frontend Assets (`public/` and `src/assets/`)
+
 - **Logo and branding**: Application logo, favicon, and brand assets
 - **Images**: Property photos, hero images, and UI graphics
 - **Icons**: SVG icons for interface elements and social media
 - **SEO Assets**: Thumbnails, robots.txt, sitemap.xml for search optimization
 
 ## Startup Scripts
+
 - **start-lynapp-win.bat**: Automated Windows setup and launch
 - **start-lynapp-macos.sh**: macOS/Linux setup and launch script
 
 These scripts handle:
+
 - Virtual environment setup and activation
 - Dependency installation (pip and npm)
 - Database migrations and setup
@@ -273,12 +303,14 @@ These scripts handle:
 ## File Naming Conventions
 
 ### Frontend
+
 - **Components**: PascalCase with matching CSS files (`ListingCard.jsx` + `ListingCard.css`)
 - **Pages**: PascalCase with `Page` suffix (`HomePage.jsx`)
 - **Hooks**: camelCase with `use` prefix (`useListings.js`)
 - **Services**: camelCase (`api.js`)
 
 ### Backend
+
 - **Models**: PascalCase class names (`Listing`, `PriceHistory`, `AnalysisCache`)
 - **Views**: snake_case function names (`search_listings`) and PascalCase class names (`OpenAIProxyAPIView`)
 - **URLs**: kebab-case patterns (`/api/listings/analyze-housing/`)

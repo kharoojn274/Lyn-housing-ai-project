@@ -4,7 +4,7 @@
 
 **Lyn Housing AI App** encourages contributions in various forms, including code, documentation, bug reports, feature suggestions, and UX/UI ideas.
 
-- Maintained by [@ndmh99](https://github.com/ndmh99).
+- Maintained by [@Haroon](https://github.com/kharoojn274).
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### 1. Fork the Repository
 
-- Click the **Fork** button at the top-right of [the main repo](https://github.com/ndmh99/lyn-housing-ai-app) to create your copy.
+- Click the **Fork** button at the top-right of [the main repo](https://github.com/kharoojn274/Lyn-housing-ai-project.git) to create your copy.
 
 ### 2. Clone Your Fork
 
@@ -88,7 +88,7 @@ git push origin feature/your-feature
 ## Contribution Tips
 
 - Read the [README.md](./README.md) for project context before contributing.
-- Open an [issue](https://github.com/ndmh99/lyn-housing-ai-app/issues) for major feature proposals before coding.
+- Open an [issue](https://github.com/kharoojn274/Lyn-housing-ai-project/issues) for major feature proposals before coding.
 - Write or update tests for your contributions.
 - Discuss major changes or refactors via issues or pull request comments.
 - Use clear naming conventions and keep the codebase clean and DRY (Don't Repeat Yourself).
@@ -97,7 +97,7 @@ git push origin feature/your-feature
 
 ## Need Help?
 
-- Open an [issue](https://github.com/ndmh99/lyn-housing-ai-app/issues) or ask questions in your Pull Request.
+- Open an [issue](https://github.com/kharoojn274/Lyn-housing-ai-project/issues) or ask questions in your Pull Request.
 - Your ideas and inquiries help improve the project!
 
 ---

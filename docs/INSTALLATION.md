@@ -54,7 +54,7 @@ git --version
 ```cmd
 cd C:\Users\%USERNAME%\Desktop
 
-git clone https://github.com/ndmh99/lyn-housing-ai-app.git
+git clone https://github.com/kharoojn274/Lyn-housing-ai-project.git
 cd lyn-housing-ai-app
 
 # Backend
@@ -109,7 +109,7 @@ git --version
 ```bash
 cd ~/Desktop
 
-git clone https://github.com/ndmh99/lyn-housing-ai-app.git
+git clone https://github.com/kharoojn274/Lyn-housing-ai-project.git
 cd lyn-housing-ai-app
 
 # Backend

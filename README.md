@@ -1,6 +1,7 @@
-# 🏡 Lyn Housing AI App 
+# 🏡 Lyn Housing AI App
 
 ## Overview
+
 **Lyn Housing AI** is a **full-stack intelligent real estate platform** that combines cutting-edge artificial intelligence with modern web technologies to revolutionize property search, analysis, and investment decision-making. Built for home buyers, real estate professionals, and investors who want data-driven insights and AI-powered property recommendations.
 
 <p align="center">
@@ -18,6 +19,7 @@
 ---
 
 ## Table of Contents
+
 - 📍 [Features](#features)
 - 💻 [Tech Stack](#tech-stack)
 - 🏗️ [Architecture](#architecture)
@@ -31,6 +33,7 @@
 ---
 
 ## Features
+
 - 🤖 **AI-Powered Property Analysis** with OpenAI integration for real estate market insights and price predictions
 - 🏠 **Comprehensive Property Search** with city-based filtering, autocomplete suggestions, and advanced sorting
 - 🔐 **Secure Firebase Authentication** with complete user registration, login, and session management
@@ -45,19 +48,22 @@
 ---
 
 ## Tech Stack
-| Layer       | Technology                                                  |
-|-------------|------------------------------------------------------------|
-| **Frontend**    | [ReactJS](https://react.dev/) ([Vite](https://vitejs.dev/)), [Font Awesome](https://fontawesome.com/), [Leaflet Maps](https://leafletjs.com/) |
-| **Backend**     | [Django](https://www.djangoproject.com/) ([REST Framework](https://www.django-rest-framework.org/)), [OpenAI API](https://openai.com/api/) |
-| **Authentication**        | [Firebase Authentication](https://firebase.google.com/products/auth) |
-| **Database**    | [SQLite](https://www.sqlite.org/) (dev), [PostgreSQL](https://www.postgresql.org/) (prod) |
-| **AI/ML**      | [OpenAI GPT](https://openai.com/) for property analysis and market insights |
-| **Containerization**      | [Docker](https://www.docker.com/) with Docker Compose |
-| **Version Control** | [Git](https://git-scm.com/)/[GitHub](https://github.com/) |
-| **Deployment**    | [Vercel](https://vercel.com/) (Frontend)<br>[Render](https://render.com/) (Backend) |
+
+| Layer                | Technology                                                                                                                                    |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Frontend**         | [ReactJS](https://react.dev/) ([Vite](https://vitejs.dev/)), [Font Awesome](https://fontawesome.com/), [Leaflet Maps](https://leafletjs.com/) |
+| **Backend**          | [Django](https://www.djangoproject.com/) ([REST Framework](https://www.django-rest-framework.org/)), [OpenAI API](https://openai.com/api/)    |
+| **Authentication**   | [Firebase Authentication](https://firebase.google.com/products/auth)                                                                          |
+| **Database**         | [SQLite](https://www.sqlite.org/) (dev), [PostgreSQL](https://www.postgresql.org/) (prod)                                                     |
+| **AI/ML**            | [OpenAI GPT](https://openai.com/) for property analysis and market insights                                                                   |
+| **Containerization** | [Docker](https://www.docker.com/) with Docker Compose                                                                                         |
+| **Version Control**  | [Git](https://git-scm.com/)/[GitHub](https://github.com/)                                                                                     |
+| **Deployment**       | [Vercel](https://vercel.com/) (Frontend)<br>[Render](https://render.com/) (Backend)                                                           |
+
 ---
 
 ## Architecture
+
 ```
 ReactJS Frontend (Vite)
       │
@@ -83,6 +89,7 @@ External Services:
 ---
 
 ## Project Structure
+
 ```
 lyn-housing-ai-app/
 ├── backend/                                # Django REST API
@@ -171,20 +178,23 @@ lyn-housing-ai-app/
 ## Getting Started
 
 ### Prerequisites
+
 - **Python 3.8+** with pip package manager
-- **Node.js 16+** with npm package manager  
+- **Node.js 16+** with npm package manager
 - **OpenAI API Key** for AI property analysis features
 - **Firebase Project** for authentication services
 
 ### Environment Setup
 
 1. **Clone the repository**
+
 ```bash
-git clone https://github.com/ndmh99/lyn-housing-ai-app.git
-cd lyn-housing-ai-app
+git clone https://github.com/kharoojn274/Lyn-housing-ai-project.git
+cd Lyn-housing-ai-project
 ```
 
 2. **Backend Setup (Django)**
+
 ```bash
 cd backend
 python -m venv venv
@@ -198,16 +208,18 @@ python manage.py runserver
 ```
 
 3. **Frontend Setup (React)**
+
 ```bash
 cd frontend/lynapp-react
 npm install
 
-# Create environment file  
+# Create environment file
 cp .env.example .env  # Edit with your Firebase config
 npm run dev
 ```
 
 ### Quick Start Scripts
+
 ```bash
 # macOS/Linux
 ./start-lynapp-macos.sh
@@ -217,12 +229,15 @@ start-lynapp-win.bat
 ```
 
 ### Access Points
+
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://127.0.0.1:8000
 - **Admin Panel**: http://127.0.0.1:8000/admin
 
 ### Environment Variables Required
+
 **Backend (.env)**:
+
 ```env
 SECRET_KEY=your_django_secret_key
 DEBUG=True
@@ -231,6 +246,7 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 ```
 
 **Frontend (.env)**:
+
 ```env
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
@@ -242,21 +258,24 @@ VITE_FIREBASE_PROJECT_ID=your_project_id
 ## API Endpoints
 
 ### Core Listings API
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/listings/` | Get all property listings |
-| `GET` | `/api/listings/{id}/` | Get specific property details |
-| `GET` | `/api/listings/search/?city={city}` | Search properties by city |
-| `POST` | `/api/listings/create/` | Create new property listing |
-| `PUT` | `/api/listings/{id}/update/` | Update existing property |
-| `DELETE` | `/api/listings/{id}/delete/` | Delete property listing |
+
+| Method   | Endpoint                            | Description                   |
+| -------- | ----------------------------------- | ----------------------------- |
+| `GET`    | `/api/listings/`                    | Get all property listings     |
+| `GET`    | `/api/listings/{id}/`               | Get specific property details |
+| `GET`    | `/api/listings/search/?city={city}` | Search properties by city     |
+| `POST`   | `/api/listings/create/`             | Create new property listing   |
+| `PUT`    | `/api/listings/{id}/update/`        | Update existing property      |
+| `DELETE` | `/api/listings/{id}/delete/`        | Delete property listing       |
 
 ### AI Analysis API
-| Method | Endpoint | Description |
-|--------|----------|-------------|
+
+| Method | Endpoint                         | Description                                |
+| ------ | -------------------------------- | ------------------------------------------ |
 | `POST` | `/api/listings/analyze-housing/` | Generate AI property analysis using OpenAI |
 
 ### Features
+
 - **Caching System**: AI analysis results are cached to improve performance
 - **Error Handling**: Comprehensive error responses with details
 - **Authentication**: Firebase token validation for protected endpoints
@@ -269,23 +288,26 @@ VITE_FIREBASE_PROJECT_ID=your_project_id
 ## Development
 
 ### Branch Strategy
+
 - **`main`**: Production-ready stable releases
 - **`develop`**: Active development branch (current)
 - **`test`**: Integration testing environment
 - **`deployment`**: Cloud deployment configurations
 
 ### Development Workflow
+
 1. Fork the repository and create feature branches from `develop`
 2. Follow the coding standards and run tests locally
 3. Submit pull requests targeting the `develop` branch
 4. All PRs require review before merging
 
 ### Local Development Setup
+
 ```bash
 # Start backend with hot reload
 cd backend && python manage.py runserver
 
-# Start frontend with hot reload  
+# Start frontend with hot reload
 cd frontend/lynapp-react && npm run dev
 
 # Run tests
@@ -294,6 +316,7 @@ cd frontend/lynapp-react && npm test
 ```
 
 ### Docker Development
+
 ```bash
 # Start all services
 docker-compose up --build
@@ -301,7 +324,7 @@ docker-compose up --build
 # Backend only
 cd backend && docker-compose up
 
-# Frontend only  
+# Frontend only
 cd frontend/lynapp-react && docker-compose up
 ```
 
@@ -314,6 +337,7 @@ cd frontend/lynapp-react && docker-compose up
 We welcome contributions from developers of all experience levels! Here's how you can help:
 
 ### How to Contribute
+
 1. **Fork** the repository and clone your fork locally
 2. **Create a feature branch** from `develop`: `git checkout -b feature/your-feature-name`
 3. **Make your changes** following our coding standards
@@ -321,6 +345,7 @@ We welcome contributions from developers of all experience levels! Here's how yo
 5. **Submit a Pull Request** with a clear description of changes
 
 ### Areas for Contribution
+
 - 🤖 **AI Features**: Enhance property analysis algorithms
 - 🎨 **UI/UX**: Improve user interface and experience
 - 📊 **Data Visualization**: Add new chart types and analytics
@@ -329,21 +354,23 @@ We welcome contributions from developers of all experience levels! Here's how yo
 - 🧪 **Testing**: Expand test coverage and automation
 
 ### Development Guidelines
+
 - Follow existing code style and conventions
 - Write meaningful commit messages
 - Include tests for new features
 - Update documentation as needed
 - Be respectful and collaborative in discussions
 
-🤝 **Questions?** Open an [issue](https://github.com/ndmh99/lyn-housing-ai-app/issues) or discussion thread
+🤝 **Questions?** Open an [issue](https://github.com/kharoojn274/Lyn-housing-ai-project/issues) or discussion thread
 
 📋 **Detailed Guidelines**: [CONTRIBUTING.md](./docs/CONTRIBUTING.md)
 
 ---
 
 ## License
-[MIT License](./LICENSE) © [ndmh99](https://github.com/ndmh99)
+
+[MIT License](./LICENSE) © [Haroon](https://github.com/kharoojn274)
 
 ---
 
-> *lyn-housing-ai-app* 🏡✨ 2025
+> _lyn-housing-ai-app_ 🏡✨ 2025
